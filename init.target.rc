@@ -55,7 +55,8 @@ on emmc-fs
    mkdir /firmware_dsps 0771 system system
 
    devwait emmc@radio
-   mount vfat emmc@radio /firmware_radio ro shortname=lower
+#   mount vfat emmc@radio /firmware_radio ro shortname=lower
+   mount vfat loop@/data/local/tmp/radio.img /firmware_radio ro shortname=lower
    devwait emmc@adsp
    mount vfat emmc@adsp /firmware_q6 ro shortname=lower
    devwait emmc@wcnss
